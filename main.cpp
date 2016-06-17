@@ -2,12 +2,15 @@
 #include <iostream>
 #include <memory>
 #include <thread>
+#include "Server.h"
 
 int main()
 {
 	try
 	{
 		asio::io_service ioService;
+
+		Server server{ioService};
 
 		auto threadPoolSize = std::thread::hardware_concurrency();
 		std::vector<std::unique_ptr<std::thread>> threadPool{threadPoolSize};

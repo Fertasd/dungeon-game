@@ -28,7 +28,11 @@ else()
 endif()
 
 set(SRC_LIST
-	main)
+	ConsoleController
+	Controller
+	main
+	PlayerController
+	Server)
 
 add_executable(${PROJECT_NAME} ${SRC_LIST})
 target_include_directories(${PROJECT_NAME} SYSTEM PUBLIC ${ASIO_INCLUDE_DIR})
