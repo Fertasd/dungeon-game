@@ -29,7 +29,6 @@ endif()
 
 set(SRC_LIST
 	main)
-protobuf_generate_cpp(PROTO_SRC PROTO_H network/packets.proto)
 
 add_executable(${PROJECT_NAME} ${SRC_LIST})
 target_include_directories(${PROJECT_NAME} SYSTEM PUBLIC ${ASIO_INCLUDE_DIR})
