@@ -28,12 +28,16 @@ else()
 endif()
 
 set(SRC_LIST
+	Command
+	CommandFactory
+	commands/ExitCommand
 	ConsoleController
 	Controller
+	global
 	main
 	PlayerController
 	Server)
 
 add_executable(${PROJECT_NAME} ${SRC_LIST})
-target_include_directories(${PROJECT_NAME} SYSTEM PUBLIC ${ASIO_INCLUDE_DIR})
+target_include_directories(${PROJECT_NAME} SYSTEM PUBLIC ${CMAKE_SOURCE_DIR} ${ASIO_INCLUDE_DIR})
 target_link_libraries(${PROJECT_NAME} ${ASIO_LIBRARIES})
